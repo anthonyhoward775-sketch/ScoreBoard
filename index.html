@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scoreboard Showdown</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Scoreboard Showdown</h1>
+    <p class="subtitle">Guest vs Away – Game On!</p>
+  </header>
+
+  <!-- Top section: Clock, Period, Possession -->
+  <div class="game-info">
+    <div class="clock-box">
+      <div id="game-clock">12:00</div>
+      <div class="clock-label">GAME CLOCK</div>
+    </div>
+
+    <div class="period-box">
+      <div id="period">1</div>
+      <div class="period-label">PERIOD</div>
+    </div>
+
+    <div class="possession-box">
+      <div id="possession-arrow" class="arrow home">← HOME</div>
+    </div>
+  </div>
+
+  <main class="scoreboard">
+    <div class="team home">
+      <h2>Guest</h2>
+      <div class="score-display" id="home-score">0</div>
+      <div class="team-name">Team Tigers</div>
+      <div class="score-buttons">
+        <button onclick="addScore('home', 1)">+1</button>
+        <button onclick="addScore('home', 2)">+2</button>
+        <button onclick="addScore('home', 3)">+3</button>
+      </div>
+      <div class="timeout-section">
+        <div class="timeout-label">TIMEOUTS</div>
+        <div class="timeout-dots" id="home-timeouts">
+          <span class="dot active"></span>
+          <span class="dot active"></span>
+          <span class="dot active"></span>
+        </div>
+        <button class="timeout-btn" onclick="useTimeout('home')">Call Timeout</button>
+      </div>
+    </div>
+
+    <div class="team away">
+      <h2>Away</h2>
+      <div class="score-display" id="away-score">0</div>
+      <div class="team-name">Team Sharks</div>
+      <div class="score-buttons">
+        <button onclick="addScore('away', 1)">+1</button>
+        <button onclick="addScore('away', 2)">+2</button>
+        <button onclick="addScore('away', 3)">+3</button>
+      </div>
+      <div class="timeout-section">
+        <div class="timeout-label">TIMEOUTS</div>
+        <div class="timeout-dots" id="away-timeouts">
+          <span class="dot active"></span>
+          <span class="dot active"></span>
+          <span class="dot active"></span>
+        </div>
+        <button class="timeout-btn" onclick="useTimeout('away')">Call Timeout</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Control buttons -->
+  <div class="controls">
+    <button id="start-pause-clock">Start Clock</button>
+    <button id="next-period">Next Period</button>
+    <button id="toggle-possession">Flip Possession</button>
+    <button id="reset-clock">Reset Clock</button>
+  </div>
+
+  <!-- Victory celebration overlay (hidden until game ends) -->
+  <div id="victory-overlay" class="victory-overlay hidden">
+    <div id="confetti-container"></div>
+    <div class="victory-content">
+      <div class="trophy">🏆</div>
+      <h1 id="victory-title" class="victory-title">WINNER!</h1>
+      <p id="victory-team" class="victory-team"></p>
+      <p id="victory-score" class="victory-score"></p>
+      <button id="new-game-btn" class="new-game-btn">🔄 New Game</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
