@@ -397,27 +397,220 @@ header .subtitle {
   }
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 660px) {
+/* ---------- Responsive: Tablet ---------- */
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  header {
+    padding: 20px 16px 8px;
+  }
+
+  .game-info {
+    gap: 24px;
+    padding: 16px 10px;
+  }
+
   .scoreboard {
     flex-direction: column;
     align-items: center;
+    gap: 24px;
+    padding: 16px 12px 24px;
   }
 
   .team {
     max-width: 100%;
-  }
-
-  .game-info {
-    gap: 20px;
+    width: 100%;
+    min-width: unset;
+    padding: 24px 20px;
   }
 
   .controls {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    padding: 10px 16px 30px;
   }
 
   .controls button {
     width: 80%;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
+
+/* ---------- Responsive: Mobile ---------- */
+@media (max-width: 480px) {
+  header {
+    padding: 16px 12px 6px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  header .subtitle {
+    font-size: 13px;
+  }
+
+  .game-info {
+    gap: 16px;
+    padding: 12px 8px;
+  }
+
+  .clock-box #game-clock {
+    font-size: 40px;
+  }
+
+  .period-box #period {
+    font-size: 36px;
+  }
+
+  .possession-box .arrow {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  .scoreboard {
+    gap: 18px;
+    padding: 10px 8px 20px;
+  }
+
+  .team {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .team h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .score-display {
+    font-size: 64px;
+    margin: 6px 0;
+  }
+
+  .team-name {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .score-buttons {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .score-buttons button {
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    /* Larger touch targets for mobile */
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .timeout-section {
+    padding-top: 12px;
+  }
+
+  .timeout-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .controls button {
+    width: 90%;
+    padding: 14px 16px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+
+  /* Victory overlay mobile */
+  .trophy {
+    font-size: 56px;
+  }
+
+  .victory-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .victory-team {
+    font-size: 18px;
+  }
+
+  .victory-score {
+    font-size: 26px;
+  }
+
+  .new-game-btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+
+/* ---------- Responsive: Very small screens ---------- */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  .clock-box #game-clock {
+    font-size: 32px;
+  }
+
+  .period-box #period {
+    font-size: 28px;
+  }
+
+  .score-display {
+    font-size: 52px;
+  }
+
+  .score-buttons button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* ---------- Touch-friendly: no hover effects on touch devices ---------- */
+@media (hover: none) {
+  .team:hover {
+    transform: none;
+  }
+
+  .controls button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .score-buttons button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Active states for tap feedback instead */
+  .score-buttons button:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  .controls button:active {
+    transform: scale(0.97);
+    opacity: 0.8;
+  }
+
+  .timeout-btn:active {
+    opacity: 0.7;
+  }
+
+  .new-game-btn:active {
+    transform: scale(0.97);
   }
 }
